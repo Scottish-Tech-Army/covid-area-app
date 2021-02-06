@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-covidareaapp-dev-135424-authRole",
+      "UnauthRoleArn": "arn:aws:iam::778011289150:role/amplify-covidareaapp-dev-135424-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::778011289150:role/amplify-covidareaapp-dev-135424-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-covidareaapp-dev-135424-deployment",
+      "UnauthRoleName": "amplify-covidareaapp-dev-135424-unauthRole",
+      "StackName": "amplify-covidareaapp-dev-135424",
+      "StackId": "arn:aws:cloudformation:eu-west-2:778011289150:stack/amplify-covidareaapp-dev-135424/d4a93bf0-6882-11eb-9f05-027695c7d5b2",
+      "AmplifyAppId": "dnq9lw5nm7ffg"
+    }
+  }
+}
