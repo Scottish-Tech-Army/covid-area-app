@@ -1,8 +1,5 @@
 # Covid Area Alerts
-<img src="https://img.shields.io/badge/node-v14.5.4-brightgreen"/>
-<img src="https://img.shields.io/badge/npm-v6.14.10-brightgreen"/>
-<img src="https://img.shields.io/badge/expo_cli-v4.1.6-brightgreen"/>
-<img src="https://img.shields.io/badge/aws_cli-v2.1.24-brightgreen"/>
+<img src="https://img.shields.io/badge/node-v14.5.4-brightgreen"/> <img src="https://img.shields.io/badge/npm-v6.14.10-brightgreen"/> <img src="https://img.shields.io/badge/expo_cli-v4.1.6-brightgreen"/> <img src="https://img.shields.io/badge/aws_cli-v2.1.24-brightgreen"/>
 
 ## Background
 This app tells you the restrictions on your current local authority area, it will
