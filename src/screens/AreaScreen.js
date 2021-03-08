@@ -41,7 +41,6 @@ function AreaScreen() {
           title="Set my area"
           onPress={() => {
             // save to local storage
-            console.log('You selected ', area, ' area')
             storeAreaCode(area)
           }}
         />

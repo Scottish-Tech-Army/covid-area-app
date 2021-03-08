@@ -19,7 +19,6 @@ function AppStateProvider({ children }) {
 
   function storeAreaCode(area) {
     // saving item to storage
-    console.log('saving item', area)
     AsyncStorage.setItem('areaCode', area)
     setAreaCode(area)
   }

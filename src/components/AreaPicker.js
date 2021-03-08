@@ -18,7 +18,6 @@ function AreaPicker(props) {
     <StyledPicker
       selectedValue={selectedValue}
       onValueChange={(value, index) => {
-        console.log('you picked: ', value, index)
         onSelect(value)
       }}
     >

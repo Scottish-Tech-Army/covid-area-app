@@ -4,6 +4,7 @@ import HomeScreen from './HomeScreen'
 import AreaScreen from './AreaScreen'
 import HeaderLeftMenu from '../components/HeaderLeftMenu'
 import { useAppState } from '../lib/appState'
+import MapScreen from './MapScreen'
 
 const Stack = createStackNavigator()
 
@@ -13,16 +14,19 @@ function MainStack() {
   return (
     <Stack.Navigator>
       {areaCode ? (
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            headerLeft: () => <HeaderLeftMenu />,
-            headerLeftContainerStyle: {
-              marginLeft: 10,
-            },
-          }}
-        />
+        <>
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{
+              headerLeft: () => <HeaderLeftMenu />,
+              headerLeftContainerStyle: {
+                marginLeft: 10,
+              },
+            }}
+          />
+          <Stack.Screen name="Map" component={MapScreen} />
+        </>
       ) : (
         <Stack.Screen
           name="Area"

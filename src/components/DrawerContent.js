@@ -22,7 +22,6 @@ function CustomDrawerContent(props) {
       <Button
         title="Save"
         onPress={() => {
-          console.log('you selected', area)
           storeAreaCode(area)
           navigation.closeDrawer()
         }}
