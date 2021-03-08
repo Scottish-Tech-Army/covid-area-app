@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "covidareaapp71c9369b71c9369b": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
