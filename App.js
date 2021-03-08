@@ -1,52 +1,42 @@
-import React, { useEffect } from 'react';
-import Amplify, { Auth } from 'aws-amplify';
-import Location from "aws-sdk/clients/location";
-import awsconfig from './src/aws-exports';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import Amplify from 'aws-amplify'
+import AWSConfig from './src/aws-exports'
+import { createDrawerNavigator } from '@react-navigation/drawer'
+import { NavigationContainer } from '@react-navigation/native'
+import { useFonts, BebasNeue_400Regular } from '@expo-google-fonts/bebas-neue'
+import AppLoading from 'expo-app-loading'
+import MainStack from './src/screens/MainStack'
+import CustomDrawerContent from './src/components/DrawerContent'
+import { AppStateProvider } from './src/lib/appState'
 
-Amplify.configure(awsconfig);
+Amplify.configure(AWSConfig)
 
-const createClient = async () => {
-  const credentials = await Auth.currentCredentials();
+const Drawer = createDrawerNavigator()
 
-  const client = new Location({
-    credentials,
-    region: awsconfig.aws_project_region
-  });
-
-  return client;
-}
 function App() {
+  const [fontsLoaded] = useFonts({
+    BebasNeue_400Regular,
+  })
 
-  useEffect(() => {
-    const send = async function () {
-
-      const client = await createClient();
-      client.listGeofenceCollections({}, function (err, data) {
-        if (err) {
-          console.log('list geo err', err)
-        } else {
-          console.log('list geo success', data)
-        }
-      })
-    }
-    send();
-  },[])
+  if (!fontsLoaded) {
+    return <AppLoading />
+  }
 
   return (
-    <View style={styles.container}>
-      <Text>Expo + AWS Amplify</Text>
-    </View>
-  );
+    <AppStateProvider>
+      <NavigationContainer>
+        <Drawer.Navigator
+          initialRouteName="Main"
+          drawerStyle={{
+            backgroundColor: '#207df3',
+          }}
+          drawerContent={(props) => <CustomDrawerContent {...props} />}
+        >
+          <Drawer.Screen name="Main" component={MainStack} />
+        </Drawer.Navigator>
+      </NavigationContainer>
+    </AppStateProvider>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
-export default App;
+export default App
