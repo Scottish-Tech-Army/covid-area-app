@@ -23,9 +23,7 @@ const Label = styled.Text`
   color: ${COLORS.primaryBlack};
   font-family: ${FONTS.primary};
   font-size: 30px;
-  font-weight: bold;
   text-align: center;
-  text-transform: ${(props) => (props.uppercase ? 'uppercase' : 'none')};
 `
 
 const Button = (props) => {

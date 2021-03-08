@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DrawerContentScrollView } from '@react-navigation/drawer'
 import styled from 'styled-components/native'
 import Button from './Button'
@@ -13,7 +13,11 @@ const DrawerContentArea = styled(DrawerContentScrollView)`
 function CustomDrawerContent(props) {
   const { navigation } = props
   const { areaCode, storeAreaCode } = useAppState()
-  const [area, setArea] = useState(areaCode)
+  const [area, setArea] = useState()
+
+  useEffect(() => {
+    setArea(areaCode)
+  }, [areaCode])
 
   return (
     <DrawerContentArea {...props}>

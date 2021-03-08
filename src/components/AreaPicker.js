@@ -1,12 +1,17 @@
 import React from 'react'
-import { COLORS, LOCAL_AUTHORITY_DISTRICTS } from '../app.config'
 import { Picker } from '@react-native-picker/picker'
 import styled from 'styled-components/native'
+import { Platform } from 'react-native'
+import { COLORS, LOCAL_AUTHORITY_DISTRICTS } from '../app.config'
 
-const StyledPicker = styled(Picker)`
+const Container = styled.View`
   border: 1px solid white;
   border-radius: 10px;
   margin: 10px 0;
+`
+
+const StyledPicker = styled(Picker)`
+  color: ${COLORS.primaryWhite};
 `
 
 // Potentially use https://github.com/lawnstarter/react-native-picker-select ???
@@ -14,27 +19,33 @@ const StyledPicker = styled(Picker)`
 function AreaPicker(props) {
   const { selectedValue, onSelect } = props
 
-  return (
-    <StyledPicker
-      selectedValue={selectedValue}
-      onValueChange={(value, index) => {
-        onSelect(value)
-      }}
-    >
-      {LOCAL_AUTHORITY_DISTRICTS.map(({ areaCode, areaName }) => {
-        const isSelected = areaCode === selectedValue
+  console.log('areapicker===', selectedValue)
 
-        return (
-          <Picker.Item
-            key={areaCode}
-            color={isSelected ? COLORS.primaryWhite : COLORS.primaryBlack}
-            label={areaName}
-            value={areaCode}
-            selected={areaCode === selectedValue}
-          />
-        )
-      })}
-    </StyledPicker>
+  return (
+    <Container>
+      <StyledPicker
+        dropdownIconColor="#ffffff"
+        selectedValue={selectedValue}
+        onValueChange={(value) => {
+          onSelect(value)
+        }}
+      >
+        {LOCAL_AUTHORITY_DISTRICTS.map(({ areaCode, areaName }) => {
+          const isSelected = Platform.OS === 'ios' && areaCode === selectedValue
+
+          return (
+            <Picker.Item
+              key={areaCode}
+              label={areaName}
+              color={isSelected ? COLORS.primaryWhite : COLORS.primaryBlack}
+              fontWeight="bold"
+              value={areaCode}
+              selected={areaCode === selectedValue}
+            />
+          )
+        })}
+      </StyledPicker>
+    </Container>
   )
 }
 

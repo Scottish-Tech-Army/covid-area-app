@@ -25,7 +25,7 @@ const Area = styled(Animatable.View)`
 
 const AreaName = styled.Text`
   font-family: ${FONTS.primary};
-  font-size: 65px;
+  font-size: 60px;
   text-align: center;
   padding: 0 10px;
   color: ${COLORS.primaryWhite};
