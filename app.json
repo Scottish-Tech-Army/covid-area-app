@@ -17,12 +17,25 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "infoPlist": {
+        "UIBackgroundModes": ["location", "fetch"],
+        "NSLocationWhenInUseUsageDescription": "To alert you when you leave your home area, we need permission to know your location"
+      },
+      "config": {
+        "googleMapsApiKey": "[ADD_KEY_HERE]"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "permissions": ["ACCESS_COURSE_LOCATION", "ACCESS_BACKGROUND_LOCATION"],
+      "config": {
+        "googleMaps": {
+          "apiKey": "[ADD_KEY_HERE]"
+        }
       }
     },
     "web": {

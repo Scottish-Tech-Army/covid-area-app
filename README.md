@@ -23,18 +23,18 @@ nvm use
 ```
 git clone https://github.com/Scottish-Tech-Army/covid-area-app.git
 
-npm install
+expo install
 ```
 
 ## Run
 You can run the bundler independently or target specific platform
 ```
-npm start
+expo start
 ```
 
 ```
-npm run ios  
-npm run android
+yarn run ios  
+yarn run android
 
 ```
 
@@ -49,6 +49,10 @@ TBC
 Create feature branches from `develop`, squash and merge after PR.
 
 Release branch will be created when ready to push a version to `master`
+
+### Adding dependencies
+Please ensure you use `expo install <package>` to ensure the correct compatible version gets installed.
+Do not use `npm install` for any packages in this project.
 
 ## Team
 TBC
