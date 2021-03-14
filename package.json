@@ -10,8 +10,11 @@
   },
   "jest": {
     "preset": "jest-expo",
+    "setupFiles": [
+      "./test-setup.js"
+    ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|@react-native-picker|@expo-google-fonts|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
     ]
   },
   "dependencies": {
@@ -56,7 +59,7 @@
     "jest": "26.6.3",
     "jest-expo": "40.0.2",
     "prettier": "2.2.1",
-    "react-test-renderer": "17.0.1",
+    "react-test-renderer": "16.14.0",
     "simplify-geojson": "1.0.4",
     "yargs": "16.2.0"
   },
