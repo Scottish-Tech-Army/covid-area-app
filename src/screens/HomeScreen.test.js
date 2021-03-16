@@ -9,11 +9,12 @@ const Providers = ({ children }) => {
 
 describe('HomeScreen', function () {
   it('renders location', () => {
-    const { debug } = render(
+    const { getByText } = render(
       <Providers>
         <HomeScreen />
       </Providers>
     )
-    debug()
+
+    expect(getByText('your area')).toBeTruthy()
   })
 })
