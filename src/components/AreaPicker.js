@@ -19,8 +19,6 @@ const StyledPicker = styled(Picker)`
 function AreaPicker(props) {
   const { selectedValue, onSelect } = props
 
-  console.log('areapicker===', selectedValue)
-
   return (
     <Container>
       <StyledPicker
