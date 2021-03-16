@@ -48,9 +48,6 @@ function App() {
         distanceInterval: 3000, // 3km
         showsBackgroundLocationIndicator: true,
       })
-
-      //const location = await Location.getCurrentPositionAsync()
-      //console.log('location is', location)
     })()
   }, [])
 
