@@ -40,10 +40,13 @@ yarn run android
 
 ### Real devices
 If you have a real device you can install the Expo app from the App/Play store and 
-then scan the QR code from the bundler app.
+then scan the QR code from the bundler app. You will need real devices in order to test push notifications.
 
 ## Tests
 TBC
+
+## Architecture
+<img src="https://github.com/Scottish-Tech-Army/covid-area-app/raw/master/architecture.png" alt="" height="300"/>
 
 ## Development
 Create feature branches from `develop`, squash and merge after PR.
