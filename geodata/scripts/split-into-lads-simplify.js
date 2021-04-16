@@ -29,7 +29,6 @@ if (!jsonData.hasOwnProperty('features')) {
 const features = jsonData.features
 
 const filterLads = features.reduce((acc, feature, index) => {
-  const polyLen = feature.geometry.coordinates[0].length
   const simpleFeature = simplifyGeoJSON(feature, GEOJSON_TOLERANCE)
 
   // delete small stuff likely small islands or edges
@@ -80,7 +79,7 @@ entries.forEach((entry) => {
   }
   let data = JSON.stringify(output)
   try {
-    fs.writeFileSync(`./dist/lads/${filename}`, data)
+    fs.writeFileSync(`./dist/lads/${filename}.json`, data)
   } catch (error) {
     console.error(`Unable to write file dist/lads/${filename}.json`)
     process.exit(1)

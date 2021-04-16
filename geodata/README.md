@@ -21,6 +21,23 @@ To view any GeoJSON file on a map please use https://geojson.io/
 ## Converting 
 The folder `geodata/scripts` contains all the code needed to process the source file.
 
+To create the final output files run:
+```bash
+cd geodata
+// creates dist/scottish-lad.geojson
+node scripts/filter-scottish-lad.js --input src/uk-lads-super-general.geojson
+
+// creates dist/scottish-lad-without-main-islands.geojson
+node scripts/filter-out-lads.js --input dist/scottish-lad.geojson
+
+// creates dist/lads folder with each lads e.g. aberdeenshire.json ...
+node scripts/split-into-lads-simplify.js --input dist/scottish-lad-without-main-islands.geojson
+
+// copy generated files to src so the can be committed
+cp dist/lads/*.json ../src/data/lads
+cp manual-fences/*.json ../src/data/lads
+```
+
 ### Filter Scottish Local Authority Districts
 Creates a file with only scottish LADs
 

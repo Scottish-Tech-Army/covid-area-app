@@ -15,7 +15,7 @@ const Area = styled.View`
 const Message = styled.View`
   background: ${COLORS.primaryWhite};
   border-radius: 10px;
-  padding: 5px 0;
+  padding: 5px;
 `
 
 const Text = styled.Text`
@@ -33,14 +33,14 @@ function AreaScreen() {
         <Heading>Choose your area</Heading>
         <Message>
           <Text>
-            You will receive alerts if you leave your designated local authority
+            You will be alerted when you leave your designated local authority
+            area
           </Text>
         </Message>
         <AreaPicker selectedValue={area} onSelect={setArea} />
         <Button
           title="Set my area"
           onPress={() => {
-            // save to local storage
             storeAreaCode(area)
           }}
         />
