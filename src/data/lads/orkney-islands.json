@@ -6,7 +6,9 @@
       "properties": {
         "lad17nm": "Orkney Islands",
         "lad17cd": "S12000023",
-        "id": "orkney-islands_S12000023-1"
+        "id": "orkney-islands_S12000023-1",
+        "lat":  59.32198054010197,
+        "long": -2.823486328125
       },
       "geometry": {
         "type": "Polygon",

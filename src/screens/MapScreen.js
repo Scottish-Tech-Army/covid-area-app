@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import MapView, { Geojson, PROVIDER_GOOGLE } from 'react-native-maps'
 import { useWindowDimensions } from 'react-native'
 import { useHeaderHeight } from '@react-navigation/stack'
-import edinburgh_geojson from '../../geodata/dist/lads/city-of-edinburgh.json'
+import { LOCAL_AUTHORITY_DISTRICTS } from '../app.config'
 
 const Map = styled(MapView)`
   background-color: red;
@@ -13,11 +13,23 @@ const Map = styled(MapView)`
 const FullScreen = styled.View`
   flex: 1;
 `
-// TODO: Pass the area so we can show the correct Geojson
+
+function getMapInfo(areaCode) {
+  const { geojson, mapConfig } = LOCAL_AUTHORITY_DISTRICTS.find(
+    (item) => item.areaCode === areaCode
+  )
+
+  return {
+    geojson,
+    mapConfig,
+  }
+}
+
 function MapScreen(props) {
   const { navigation, route } = props
   const { height } = useWindowDimensions()
   const headerHeight = useHeaderHeight()
+  const areaCode = route?.params?.areaCode
 
   useEffect(() => {
     navigation.setOptions({
@@ -25,21 +37,17 @@ function MapScreen(props) {
     })
   }, [])
 
+  const { geojson, mapConfig } = getMapInfo(areaCode)
+
   return (
     <FullScreen>
       <Map
         provider={PROVIDER_GOOGLE}
         height={height - headerHeight}
-        region={{
-          latitude: edinburgh_geojson.features[0].geometry.coordinates[0][0][1],
-          latitudeDelta: 1,
-          longitude:
-            edinburgh_geojson.features[0].geometry.coordinates[0][0][0],
-          longitudeDelta: 1,
-        }}
+        region={mapConfig}
       >
         <Geojson
-          geojson={edinburgh_geojson}
+          geojson={geojson}
           fillColor="rgba(0,0,255,0.1)"
           strokeColor="#000"
           strokeWidth={2}

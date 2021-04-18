@@ -6,7 +6,9 @@
       "properties": {
         "lad17nm": "Na h-Eileanan Siar",
         "lad17cd": "S12000013",
-        "id": "na-h-eileanan-siar_S12000013-1"
+        "id": "na-h-eileanan-siar_S12000013-1",
+        "lat":  57.2787702,
+        "long": -6.7028813
       },
       "geometry": {
         "type": "Polygon",

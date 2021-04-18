@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/native'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import Screen from '../components/Screen'
 import AreaPicker from '../components/AreaPicker'
 import Button from '../components/Button'

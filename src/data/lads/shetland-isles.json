@@ -6,7 +6,9 @@
       "properties": {
         "lad17nm": "Shetland Islands",
         "lad17cd": "S12000027",
-        "id": "shetland-islands_S12000027-1"
+        "id": "shetland-islands_S12000027-1",
+        "lat": 60.3493579,
+        "long": -1.2761398
       },
       "geometry": {
         "type": "Polygon",
